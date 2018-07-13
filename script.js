@@ -31,7 +31,7 @@
     // Do when a card is clicked
     function clickCard(card) {
       // Disallow clicks on a card that's already open
-      if (card.src.indexOf("ruins-back.jpg") == -1 && cardsOpen == 1) { return; }
+      if (card.src.indexOf("BuzzFeed.png") == -1 && cardsOpen == 1) { return; }
       cardsOpen++;                  // Increment cardsOpen variable
       if (cardsOpen < 3) {          // Do if cardsOpen is <=2
         cardsDisplay[cardsOpen] = card.id;
@@ -52,7 +52,7 @@
         for (var i = 1; i < cardsDisplay.length; i++) {
           if (cardsDisplay[i] != "") {
             var card = document.getElementById(cardsDisplay[i]);
-            card.src = "./assets/ruins-back.jpg";
+            card.src = "./assets/buzzfeed.png";
           }
         }
         cardsOpen = 0;
@@ -86,9 +86,9 @@
       var cards = document.getElementsByClassName("card");
       for (var i = 0; i < cards.length; i++) {
         // Set all cards to show back of card
-        cards[i].src = "./assets/ruins-back.jpg";
+        cards[i].src = "./assets/BuzzFeed.png";
         // Assign full filename to alt tag of randomized card number
-        document.getElementById("card" + (i+1)).alt = "./assets/ruins" + arr[i] + ".jpg";
+        document.getElementById("card" + (i+1)).alt = "./assets/doggo" + arr[i] + ".jpg";
       }
     }
 

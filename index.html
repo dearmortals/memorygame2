@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en-us" class=" -webkit-">
+
+<!-- See earlier lessons for additional comments -->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Ruins of Ramic, Lesson 2 - The Basics. Version 1.0" />
+  <meta name="author" content="The Gamer's Guide to Coding; www.buenacreek.com" />
+  <meta name="dcterms.rights" content="https://creativecommons.org/licenses/by-sa/4.0/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Memory</title>
+
+<style>
+  #mainContent {
+    position: relative;
+    background-color: black;
+    border-radius: 2px;
+    padding: 2px;
+    width: 1000px;
+    height: 700px;
+  }
+
+  #wrap {
+    width: 100%;
+    height: 100%;
+    margin-left: 60px;
+    margin-right: 60px;
+    padding-bottom: 10px;
+    padding-top: 30px;
+}
+
+  .card {
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 20%;
+    height: 25%;
+    border: 1px solid white;
+    user-select: none;
+    cursor: pointer;
+    visibility: hidden;
+  }
+
+  #cardback {
+    position: absolute;
+    margin-left: 0px;
+    margin-top: 0px;
+    width: 167px;
+    height: 200px;
+    left: 34px;
+    top: 458px;
+    border: 1px solid white;
+    user-select: none;
+    cursor: pointer;
+  }
+
+  /* Hot spot controls, score area, help overlay */
+  .leftControls {
+    position: absolute;
+    margin-left: 0px;
+    margin-top: 0px;
+    left: 35px;
+    width: 170px;
+  }
+  #score {
+    top: 170px;
+    height: 140px;
+  }
+  #score p {
+    margin: 0 auto;
+    padding: 10px 12px;
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 0.95em;
+    color: #fff;
+    letter-spacing: 0.25em;
+    line-height: 1.5em;
+    display: inline-block;
+  }
+  #newGameBttn {
+    top: 380px;
+    height: 45px;
+    user-select: none;
+    cursor: pointer;
+    background-color: white;
+    font-family: Impact, Charcoal, sans-serif;
+    color: black;
+  }
+  #help {
+    position: absolute;
+    background-color: #202629;
+    opacity: 0.90;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%,-50%);
+    width: 570px;
+    height: 280px;
+  }
+  #help p {
+    margin: 0 auto;
+    padding: 10px 12px;
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 1.65em;
+    color: #fff;
+    display: inline-block;
+  }
+</style>
+
+
+  <script src="script.js"></script>
+  <script src="./assets/prefixfree.min.js"></script>
+</head>
+
+<body>
+    <!-- Everything on the page goes into this DIV element -->
+    <div id="mainContent">        <!-- Playboard background is defined in this element -->
+<div id="wrap">
+      <!-- Set of 12 cards, three rows of four columns each -->
+      <img id="card1" class="card" style="left:260px; top:35px;" alt="1" src="./assets/ruins-back.jpg" onclick="clickCard(this);" />
+      <img id="card2" class="card" style="left:440px; top:35px;" alt="1" src="./assets/ruins-back.jpg" onclick="clickCard(this);" />
+      <img id="card3" class="card" style="left:620px; top:35px;" alt="2" src="./assets/ruins-back.jpg" onclick="clickCard(this);" />
+      <img id="card4" class="card" style="left:800px; top:35px;" alt="2" src="./assets/ruins-back.jpg" onclick="clickCard(this);" />
+
+      <img id="card5" class="card" style="left:260px; top:250px;" alt="3" src="./assets/ruins-back.jpg" onclick="clickCard(this);" />
+      <img id="card6" class="card" style="left:440px; top:250px;" alt="3" src="./assets/ruins-back.jpg" onclick="clickCard(this);" />
+      <img id="card7" class="card" style="left:620px; top:250px;" alt="4" src="./assets/ruins-back.jpg" onclick="clickCard(this);" />
+      <img id="card8" class="card" style="left:800px; top:250px;" alt="4" src="./assets/ruins-back.jpg" onclick="clickCard(this);" />
+
+      <img id="card9" class="card" style="left:260px; top:465px;" alt="5" src="./assets/ruins-back.jpg" onclick="clickCard(this);" />
+      <img id="card10" class="card" style="left:440px; top:465px;" alt="5" src="./assets/ruins-back.jpg" onclick="clickCard(this);" />
+      <img id="card11" class="card" style="left:620px; top:465px;" alt="6" src="./assets/ruins-back.jpg" onclick="clickCard(this);" />
+      <img id="card12" class="card" style="left:800px; top:465px;" alt="6" src="./assets/ruins-back.jpg" onclick="clickCard(this);" />
+</div>
+      <!-- Score window -->
+      <div id="score" class="leftControls">
+        <p>Tries: <span id="tries"></span></p>
+        <p>Matches: <span id="matches"></span></p>
+        <p id="gameover" style="padding-left:20px; visibility:hidden;">GAME OVER</p>
+      </div>
+
+      <!-- New Game button -->
+      <div id="newGameBttn" class="leftControls" onclick="newGame();"></div>
+
+      <!-- Help popup -->
+      <div id="help">
+        <p>Select any two cards to reveal their hidden symbols. Find symbols that match.</p>
+        <p>Match all six sets and you win.</p>
+        <p>Choose New Game to begin a new game.</p>
+      </div>
+
+    </div>
+</body>
+</html>

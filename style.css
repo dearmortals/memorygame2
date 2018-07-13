@@ -1,0 +1,81 @@
+#mainContent {
+  position: absolute;
+  background-image: url("./assets/ruins-playboard-basic.jpg");
+  background-repeat: no-repeat;
+  border-radius: 2px;
+  padding: 2px;
+  width: 1000px;
+  height: 700px;
+  overflow: hidden;
+}
+
+.card {
+  position: absolute;
+  margin-left: 0px;
+  margin-top: 0px;
+  width: 167px;
+  height: 200px;
+  border: 1px solid white;
+  user-select: none;
+  cursor: pointer;
+  visibility: hidden;
+}
+#cardback {
+  position: absolute;
+  margin-left: 0px;
+  margin-top: 0px;
+  width: 167px;
+  height: 200px;
+  left: 34px;
+  top: 458px;
+  border: 1px solid white;
+  user-select: none;
+  cursor: pointer;
+}
+
+/* Hot spot controls, score area, help overlay */
+.leftControls {
+  position: absolute;
+  margin-left: 0px;
+  margin-top: 0px;
+  left: 35px;
+  width: 170px;
+}
+#score {
+  top: 170px;
+  height: 140px;
+}
+#score p {
+  margin: 0 auto;
+  padding: 10px 12px;
+  font-family: Impact, Charcoal, sans-serif;
+  font-size: 0.95em;
+  color: #fff;
+  letter-spacing: 0.25em;
+  line-height: 1.5em;
+  display: inline-block;
+}
+#newGameBttn {
+  top: 380px;
+  height: 45px;
+  user-select: none;
+  cursor: pointer;
+}
+#help {
+  position: absolute;
+  background-color: #202629;
+  opacity: 0.90;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%,-50%);
+  width: 570px;
+  height: 280px;
+}
+#help p {
+  margin: 0 auto;
+  padding: 10px 12px;
+  font-family: Impact, Charcoal, sans-serif;
+  font-size: 1.65em;
+  color: #fff;
+  display: inline-block;
+}

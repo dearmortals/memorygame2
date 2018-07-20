@@ -39,13 +39,14 @@
     user-select: none;
     cursor: pointer;
     visibility: hidden;
+    object-fit: cover;
   }
 
   #cardback {
     position: absolute;
     margin-left: 0px;
     margin-top: 0px;
-    width: 167px;
+    width: 200px;
     height: 200px;
     left: 34px;
     top: 458px;
@@ -57,10 +58,9 @@
   /* Hot spot controls, score area, help overlay */
   .leftControls {
     position: absolute;
-    margin-left: 0px;
-    margin-top: 0px;
     left: 35px;
     width: 170px;
+    bottom: 10px;
   }
   #score {
     top: 170px;
@@ -77,13 +77,13 @@
     display: inline-block;
   }
   #newGameBttn {
-    top: 380px;
     height: 45px;
+    width: 800px;
     user-select: none;
     cursor: pointer;
     background-color: white;
-    font-family: Impact, Charcoal, sans-serif;
-    color: black;
+    font-family: Impact, black, sans-serif;
+    color: white;
   }
   #help {
     position: absolute;
@@ -132,19 +132,19 @@
 </div>
       <!-- Score window -->
       <div id="score" class="leftControls">
-        <p>Tries: <span id="tries"></span></p>
-        <p>Matches: <span id="matches"></span></p>
+        <span id="tries"></span></p>
+        <span id="matches"></span></p>
         <p id="gameover" style="padding-left:20px; visibility:hidden;">GAME OVER</p>
       </div>
 
       <!-- New Game button -->
-      <div id="newGameBttn" class="leftControls" onclick="newGame();"></div>
+      <div id="newGameBttn" class="leftControls" onclick="newGame();">
+      <p>New Game</p>
+      </div>
 
       <!-- Help popup -->
       <div id="help">
-        <p>Select any two cards to reveal their hidden symbols. Find symbols that match.</p>
-        <p>Match all six sets and you win.</p>
-        <p>Choose New Game to begin a new game.</p>
+        <p>match the doggos and you win i guess</p>
       </div>
 
     </div>

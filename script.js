@@ -73,13 +73,13 @@
     // Create a deck of cards in an array, and shuffle them to present a random set each play
     function shuffleCards() {
       var starting = 1;
-      while(starting < 26) {          // Create array with numbers 1-25
+      while(starting < 13) {          // Create array with numbers 1-25
         arr.push(starting++);
       }
       shuffle(arr);                   // Do an initial shuffle
-      arr.splice(0, 12);              // Trim off all but the last half of numbers
+      arr.splice(0, 6);              // Trim off all but the last half of numbers
       shuffle(arr);                   // Do another shuffle
-      arr.splice(6, 20);              // Remove all but the first 6 elements
+      arr.splice(7, 20);              // Remove all but the first 6 elements
       arr = arr.concat(arr);          // Make second set of 6 elements (12 elements total)
       shuffle(arr);                   // Shuffle the combined sets of numbers twice for a good mix-up
       shuffle(arr);
